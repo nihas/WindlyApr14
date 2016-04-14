@@ -1,0 +1,45 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" >
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="sm-reitem" ng-controller="SideMenuCtrl" >
+      <div >
+    <ion-header-bar class="bar bar-header sm-reitem" style="height: 30px !important;">
+    </ion-header-bar>
+          <ion-content>
+              <div class="item item-image sm-reitem" ng-init="mainView()">
+                 <img src="img/user.png" class="sm-uimg">
+                 <h2 class="sm-uname" id="name">{{name}}</h2>
+                 <p class="sm-mail" id="email">{{email}}</p>
+              </div>		  
+				<ul class="list sm-reitem sm-midfix">
+				  <a href="#/app/tabs/home" class="item sm-reitem" menu-close>
+				  <img  src="img/home168.png" class="sm-home">
+				  HOME</a>
+				  <a href="#" class="item sm-reitem" menu-close ui-sref="profile">
+				  <img  src="img/tool418.png" class="sm-home">
+				  MY ACCOUNT</a>
+				  <a href="#" class="item sm-reitem" menu-close>
+				  <img  src="img/speaker3.png" class="sm-home">
+				  NOTIFICATION<span class="badge badge-assertive sm-badge">3</span></a>
+				</ul>
+          </ion-content>
+          <div ng-click="check_logout()" >
+	<ion-footer-bar class="bar bar-footer sm-reitem" >
+	      <img src="img/symbol21.png" class="sm-log">
+		  <span class="sm-text">LOG OUT</span>
+	</ion-footer-bar>
+              </div>
+          </div>
+  </ion-side-menu>
+</ion-side-menus>

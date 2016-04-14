@@ -1,0 +1,56 @@
+<ion-view hide-nav-bar="true">
+	<div class="bar bar-header saved-head">
+	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="editcontract"></button>
+	  <div class="h1 title bold">SAVED CONTRACT</div>
+    </div>
+	<ion-content class="login-form" scroll="false">
+		    <ion-item class="no-padd">
+                <p class="saved-text">
+                   Your Contract
+                </p>
+            </ion-item>
+		    <ion-item  ng-bind-html="savedtext" href="#/app/playlists" class="no-padd">
+			</ion-item>	
+		    <ion-item class="no-padd">
+                <p class="saved-text2">
+                   has been saved.
+                </p>
+            </ion-item>	
+		    <ion-item class="no-padd">
+                <p class="saved-textmid">
+                   What would you like to do?
+                </p>
+            </ion-item>		
+              <button class="button button-full bold saved-buttong" ng-click="showAlert()">
+                  SEND TO BUYER FOR SIGNATURE
+              </button>
+              <button class="button button-full bold saved-buttonr" ng-click="showAlert()">
+                  SUBMIT TO SELLER
+              </button>
+              <button class="button button-full bold saved-buttond" ng-click="showAlert()">
+                  SEND TO TITLE COMPANY
+              </button>
+              <button class="button button-full bold saved-buttonw">
+                  GO BACK AND EDIT
+              </button>		
+     </ion-content>
+
+			<div class="tabs tabs-icon-top">
+			  <a class="tab-item" href="#/app/tabs/home">
+				<i class="icon ion-ios-home-outline"></i>
+				Home
+			  </a>
+			  <a class="tab-item" href="#/app/tabs/buyeractive">
+				<i class="icon ion-ios-person-outline"></i>
+				Buyers
+			  </a>
+			  <a class="tab-item" href="#/app/tabs/offers">
+				<i class="icon ion-ios-bookmarks-outline"></i>
+				Offers
+			  </a>
+			  <a class="tab-item" href="#/app/tabs/getstarted">
+				<i class="icon ion-ios-location-outline"></i>
+				Listings
+			  </a>
+			</div>
+</ion-view>

@@ -1,0 +1,27 @@
+ <ion-view cache-view="false" >
+
+     <div class="bar bar-header head-col">
+         <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="passcode"></button>
+         <div class="h1 title bold">PASSWORD CHANGE</div>
+     </div>
+    <ion-content overflow-scroll="true" padding="true" class="login-back has-header" scroll="false" ng-controller="LoginCtrl">
+
+        <form class="login-form" >
+            <ion-list>
+                <form>
+
+                    <label class="item-input clr-text login-input">
+                        <input type="password" ng-model="password1" placeholder="Enter Password" id="pass" name="password"  >
+                    </label>
+                    <label class="item-input clr-text login-input">
+                        <input type="password" ng-model="password2" placeholder="Enter CPassword" id="cpass" name="cpassword"  >
+                    </label>
+                </form>
+
+            </ion-list>
+              <button class="button button-full bold button-calm" ng-click="new_pass()">
+                  SUBMIT
+              </button>
+</form>
+    </ion-content>
+</ion-view>

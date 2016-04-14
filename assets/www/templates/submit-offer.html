@@ -1,0 +1,26 @@
+<ion-view cache-view="false">
+    <div ng-controller="PopupCtrl">
+    <div class="bar bar-header head-col" >
+        <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="propertydetails"></button>
+        <div class="h1 title bold">PICK BUYER</div>
+    </div>
+
+    <ion-content  scroll="true" class="has-header" ng-init="offer_popup()">
+        <ion-radio ng-repeat="item in buyerss"
+                   ng-value="item.buyer_id"
+                   ng-model="data.clientSide"
+                   ng-change="serverSideChange(item)"
+                   name="server-side">
+            {{ item.name }} <br> {{item.buyer_ph}}
+        </ion-radio>
+        <!--<div class="item item-divider">-->
+        <!--Clientside, Selected Value: {{ data.clientSide }}-->
+        <!--</div>-->
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-assertive" ng-click="continue_button()" >
+        <p class="title reg-mid1">CONTINUE</p>
+    </ion-footer-bar>
+    </div>
+</ion-view>

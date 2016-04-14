@@ -1,0 +1,37 @@
+<ion-view cache-view="false">
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="buyer-details"></button>
+	  <div class="h1 title bold">EDIT A BUYER</div>
+    </div>
+    <div  ng-controller="BuyeractiveCtrl">
+    <ion-content  scroll="true">
+        <div ng-init="initial_buyer_detail()">
+		 <form class="reg-form" >
+            <ion-list>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Name" id="buyer_name" value="{{buyer_name}}">
+                </label>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Buyer 2 Name (Optional)" id="buyer_name2" value="{{buyer_name2}}">
+                </label>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Address Line 1" id="addressline_1" value="{{addressline_1}}">
+                </label>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Address Line 2" id="addressline_2" value="{{addressline_2}}">
+                </label>	
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Phone #" id="buyer_phone" value="{{buyer_phone}}">
+                </label>
+				 <label class="item-input login-input reg-input">
+                    <input type="email" placeholder="Email" id="buyer_email" value="{{buyer_email}}">
+                </label>
+            </ion-list>
+		 </form>
+		</div>
+    </ion-content>
+				<ion-footer-bar class="bar-assertive" ng-click="chk_buyer({{buyer_id}})">
+				  <p class="title reg-mid1">SAVE</p>
+				</ion-footer-bar>
+    </div>
+</ion-view>

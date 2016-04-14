@@ -1,0 +1,42 @@
+<ion-view hide-nav-bar="true">
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon off-togg ion-android-menu" menu-toggle="left"></button>
+	  <div class="h1 title bold">OFFERS</div>
+	  <button class="button button-icon bold ion-android-add" ui-sref="propertydetails"></button>
+    </div>
+    <ion-content  scroll="false">
+		 <form class="reg-form">
+            <ion-list>
+                <button class="button-full bold off-button-col">
+					<img src="img/eye.png" class="off-icon">
+                    <span class="off-icon off-text">Viewed by Sellers</span>
+                </button>
+				<div class="row npad" ui-sref="offersdetails">
+				  <div class="col-40"><img  ng-src="{{image1}}" class=" img-all"></div>
+				  <div class="col-60" style="padding: 2% 0 0 5%;">
+					  <div class="row off-price"  ng-bind-html="price"></div>
+					  <div class="row off-add"  ng-bind-html="location"></div>
+					  <div class="row off-padd1"  ng-bind-html="homepre | n30p"></div>
+					  <div class="row off-date"  ng-bind-html="date"></div>
+				  </div>
+				</div>
+            </ion-list>
+			<ion-list class="buyde-form">
+                <button class="button-full bold buyde-stripo">
+					<img src="img/rightarrow.png" class="off-icon">
+                    <span class="off-icon off-text">Sent to Seller</span>
+                </button>
+				<div class="row npad" ui-sref="offersdetails">
+				  <div class="col-40"><img  ng-src="{{image1}}" class=" img-all"></div>
+				  <div class="col-60" style="padding: 2% 0 0 5%;">
+					  <div class="row off-price"  ng-bind-html="price"></div>
+					  <div class="row off-add"  ng-bind-html="location"></div>
+					  <div class="row off-padd1"  ng-bind-html="homepre | n30p"></div>
+					  <div class="row off-date"  ng-bind-html="date"></div>
+				  </div>
+				</div>
+            </ion-list>
+		 </form>
+		
+    </ion-content>
+</ion-view>

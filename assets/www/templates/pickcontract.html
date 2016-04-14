@@ -1,0 +1,29 @@
+<ion-view cache-view="false">
+	<div class="bar bar-header head-col">
+		<button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="propertydetails"></button>
+		<div class="h1 title bold">PICK A CONTRACT</div>
+	</div>
+	<div ng-controller="PopupCtrl">
+		<ion-content  scroll="false" class="pick-top" ng-init="pick_contract()" >
+			<form class="reg-form">
+				<ion-list >
+					<div class="pick-bar">
+						<label class="pick-search">
+							<i class="icon ion-ios-search placeholder-icon"></i>
+							<input type="search" placeholder="Search" ng-model="searchString">
+						</label>
+					</div>
+					<ion-item ng-repeat="pickcontract in pickcontract | filter: searchString"  ng-click="picked_contract(pickcontract.contract_id)" >
+						<label class="">
+							{{pickcontract.contract_title}}
+						</label>
+					</ion-item>
+				</ion-list>
+			</form>
+
+		</ion-content>
+		<ion-footer-bar class="bar-assertive">
+			<p class="title reg-mid1">UPLOAD FILE</p>
+		</ion-footer-bar>
+	</div>
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view hide-nav-bar="true">
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon off-togg ion-navicon" menu-toggle="left"></button>
+	  <div class="h1 title bold">DISCOVER HOMES</div>
+    </div>
+	<div class="bar bar-subheader head-col">
+	  <h2 class="title hf-clr">Austin, TX</h2>
+	</div>
+	<ion-content scroll="true" ng-controller="HomeCtrl" ng-init="home_properties()" class="has-header has-subheader" style="margin-top:-2px;">
+		<ion-list>
+			<div class = "row_list"  ng-repeat="tab in tabs | limitTo:4 track by $index" ng-if="$index % 2 == 0" >
+
+				<div class = "col-50" ng-repeat="i in [$index,$index+1]" ng-if="tabs[i]!=null">
+					<img style="height:180px;" ng-src="{{'http://45.55.245.79:81/projects/windly/images/'+tabs[i].property_img}}"/>
+					<div style="margin-top:-50px; margin-left:10px;"><label style="color:white;">{{tabs[i].property_price}}</label>
+						<br><label style="color:white;">{{tabs[i].property_location}}</label></div>
+				</div>
+
+
+				</div>
+					<button class="button button-full hf-browse" ui-sref="app.tabs.getstarted">
+					  BROWSE ALL PROPERTIES
+					</button>
+                    <div class="hf-gap">
+					  <p class="hf-get">
+					  GET STARTED
+					  </p>
+					  <p class="hf-by">
+					  by adding your first buyer
+					  </p>					  
+                    </div> 					
+					<button class="button button-block hf-add" ui-sref="addbuyer">
+					  ADD YOUR FIRST BUYER
+					</button>
+            </ion-list>
+    </ion-content>
+</ion-view>

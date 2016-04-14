@@ -1,0 +1,51 @@
+<ion-view hide-nav-bar="true"  ng-controller="BuyeractiveCtrl" cache-view="false">
+	<div class="bar bar-header head-col">
+		<button class="button button-icon off-togg ion-android-menu" menu-toggle="left"></button>
+		<div class="h1 title bold">BUYERS</div>
+		<button class="button button-icon bold ion-android-add" ui-sref="addbuyer"></button>
+	</div>
+	<ion-content  ng-show="showstartCard" scroll="false">
+		<form class="reg-form" ng-init="buyer_list()">
+			<div class="row ba-row">
+				<div class="col-50">
+					<button ng-click="showCard()" class="button button-block ba-button ba-g">ACTIVE ({{buyeractive.length}})</button>
+				</div>
+				<div class="col-50">
+					<button ng-click="hideCard()" class="button button-block ba-button ba-w">CLOSED ({{buyerclos.length}})</button>
+				</div>
+			</div>
+			<div class="col ba-colm"  ng-repeat="buyer in buyeractive"  ng-click="active_buyer({{buyer.buyer_id}})">
+				<div class="row row-bottom ba-colm">
+					<div class="col buyde-align ba-first" id="name" >{{buyer.buyer_name}}</div>
+					<div class="col-30 badge badge-assertive ba-off sm-badge" ></div>
+				</div>
+				<div class="row buyde-align ba-con" >{{buyer.phone}}</div>
+				<div class="row buyde-align ba-con1" >{{buyer.address1}}</div>
+			</div>
+			<p style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);" ng-show="!buyeractive.length">No Active Buyers Found..</p>
+		</form>
+
+	</ion-content>
+	<ion-content  ng-show="showsecondCard"  scroll="false">
+		<form class="reg-form" >
+			<div class="row ba-row">
+				<div class="col-50">
+					<button ng-click="showCard()" class="button button-block ba-button ba-w" ui-sref="app.tabs.buyeractive">ACTIVE ({{buyeractive.length}})</button>
+				</div>
+				<div class="col-50">
+					<button  ng-click="hideCard()"class="button button-block ba-button ba-g" ui-sref="app.tabs.buyerclose">CLOSED ({{buyerclosed.length}})</button>
+				</div>
+			</div>
+			<div class="col ba-colm"   ng-repeat="buyer in buyerclosed">
+				<div class="row row-bottom ba-colm">
+					<div class="col buyde-align ba-first"  >{{buyer.buyer_name}}</div>
+					<div class="col-30 badge badge-assertive ba-off sm-badge" ng-bind-html="offer1"></div>
+				</div>
+				<div class="row buyde-align ba-con" >{{buyer.phone}}</div>
+				<div class="row buyde-align ba-con1">{{buyer.address1}}</div>
+			</div>
+			<p style="margin: 0;position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%);" ng-show="!buyerclosed.length">No Closed Buyers Found..</p>
+		</form>
+
+	</ion-content>
+</ion-view>

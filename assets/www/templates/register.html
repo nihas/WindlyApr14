@@ -1,0 +1,75 @@
+<ion-view cache-view="false">
+<div ng-controller="AgentRegister">
+    <form name="myForm" name="signupForm"  novalidate >
+    <div >
+
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="login"></button>
+	  <div class="h1 title bold">CREATE AN ACCOUNT</div>
+    </div>
+
+
+    <ion-content  class="has-header" scroll="true">
+
+            <ion-list>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Name"  value="{{user.name}}" id="name"  name="name" >
+                </label>
+
+                <label class="item-input login-input reg-input">
+                    <input type="number" placeholder="Phone#" id="phone" name="phone" ng-length="10">
+                </label>
+
+                <label class="item-input login-input reg-input">
+                    <input type="email" placeholder="Email" id="email"  value="{{user.email}}" name="email" >
+                </label>
+
+                <label class="item-input login-input reg-input">
+                    <input type="Password" placeholder="Password"  id="password" name="password"  ng-minlength="6">
+                </label>
+
+				<label class="reg-mid">
+					<p class="reg-mid1">BROKERAGE FIRM</p>
+                </label>
+
+				<label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Company Name"  id="company" name="company"  >
+                </label>
+
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Licence#"  id="licence" name="licence" >
+                </label>
+
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Licenced Supervisor"  id="supervisor"  name="supervisor">
+                </label>
+                <label class="item-input login-input reg-input">
+                    <input type="number" placeholder="Phone"  id="company_phone"  name="company_phone" ng-length="10">
+                </label>
+				 <label class="item-input login-input reg-input">
+                    <input type="email" placeholder="Email"  id="company_email"  name="company_email">
+                </label>
+                <label class="item-input login-input reg-input">
+                    <input type="text" placeholder="Address"  id="address"  name="address">
+                </label>
+
+
+                    <span id="message"></span>
+
+            </ion-list>
+
+
+    </ion-content>
+
+
+
+        <ion-footer-bar class="bar-assertive" ng-click="validate()" >
+            <div class="h1 title reg-tittle bold"  >CREATE AN ACCOUNT</div>
+        </ion-footer-bar>
+
+
+</div>
+    </form>
+</div>
+
+</ion-view>

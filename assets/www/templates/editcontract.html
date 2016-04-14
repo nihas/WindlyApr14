@@ -1,0 +1,170 @@
+<ion-view hide-nav-bar="true" title="New Entry Form" hide-tabs >
+	<div ng-controller="PopupCtrl">
+		<div class="bar bar-header head-col" >
+			<button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="pickcontract"></button>
+			<div class="h1 title bold">1-4 FAMILY RESIDENTIAL</div>
+		</div>
+
+		<ion-content scroll="true" class="edit-padd" overflow-scroll="true" ng-init="picked_contract()">
+
+			<ion-scroll direction="x" class="wide-as-needed" >
+
+				<head>
+					<!--------------------------Basic page needs-------------------------->
+					<title>sample</title>
+					<style>
+						@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic,300italic,300&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic);
+						body
+						{
+						font-family: 'Open Sans', sans-serif;
+						}
+						input
+						{
+						border:0px solid red;
+						border-bottom:1px solid #111;
+						}
+						*{
+						padding:0 auto;
+						margin:0 auto;
+						}
+
+					</style>
+				</head>
+				<body>
+				<!------------------Start page content-------------------------------------->
+				<div class=" " style="border:2px solid #111;width: 1100px;;height:auto; overflow:auto;margin:0 auto;padding: 19px;">
+					<div class=" " style="border:0px solid green;width:100%;height:1236px;margin:0 auto;padding: 0px;">
+						<div class="header" >
+							<div style="width: 10%; float: left; visibility: visible;" class=" ">
+								<img src="img/logo.png     ">
+							</div>
+							<div class=" " style="text-align: center; line-height: 29px; width: 80%; position: relative; float: left;">
+								PROMULGATED BY THE TEXAS REAL ESTATE COMMISSION (TREC)<br>
+								<b>PROMULGATED BY THE TEXAS REAL ESTATE COMMISSION (TREC)</b><br>
+								NOTICE: Not For Use For Condominium Transactions
+							</div>
+							<div style="width: 10%; float: left;" class=" ">
+								04-28-2014
+							</div>
+						</div>
+						<div class="content" >
+							<div style="float: left; width: 100%; margin-top: 28px;" class=" ">
+								<b>1. PARTIES:</b> The parties to this contract are <span ><input type="text" id="seller_name"></span>(Seller) and <span ><input type="text" id="buyer_name"></span>  (Buyer).Seller agrees to sell and convey to Buyer and Buyer agrees to buy from Seller the Property defined below.
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px;" class=" ">
+								<b>2. PROPERTY:</b> The land, improvements and accessories are collectively referred to as the “Property”.
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;">A. LAND: </span> Lot <input type="text">Block<input type="text">, <input type="text"> Addition, City of <input type="text">, County of <input type="text">,Texas, known as <input type="text">(address/zip code), or as described on attached exhibit.
+							</div>
+							<div style="float: left; width: 93%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;">B. LIMPROVEMENTS: </span>The house, garage and all other fixtures and improvements attached to the above-described real property, including without limitation, the following <b>permanently installed and built-in items</b>, if any: all equipment and appliances, valances, screens, shutters, awnings, wall-to-wall carpeting, mirrors, ceiling fans, attic fans, mail boxes, television antennas, mounts and brackets for televisions and speakers, heating and air-conditioning units, security and fire detection equipment, wiring, plumbing and lighting fixtures, chandeliers, water softener system, kitchen equipment, garage door openers, cleaning equipment, shrubbery, landscaping, outdoor cooking equipment, and all other property owned by Seller and attached to the above described
+								real property.
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;"n>C. ACCESSORIES: : </span>
+								The following described related accessories, if any: window air conditioning units, stove, fireplace screens, curtains and rods, blinds, window shades, draperies and rods, door keys, mailbox keys, above ground pool, swimming pool equipment and maintenance accessories, artificial fireplace logs, and controls for: (i) garage doors, (ii) entry gates, and (iii) other improvements and accessories.
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span style="font-size:18px;"n>D. EXCLUSIONS:  : </span> The  following  improvements  and  access ories  will  be  retained  by  Seller  and  must be  removed  prior  to  delivery  of  possession: <input type="text">
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px;" class=" ">
+								<b>3. SALES PRICE:</b>'
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;"n>A. Cash portion of Sales Price payable by Buyer at c losing . . . . . . $ <input type="text"> </span>
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+				<span stryle="font-size:18px;">B. Sum of all financing described below (excluding any loan funding
+	fee or mortgage  insurance premium). . . . . .$ <input type="text"> </span>
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;">C. Sales Price (Sum of A and B) . . . . . .$ <input type="text"> </span>
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px;" class=" ">
+								<b>3. FINANCING (Not for use with reverse mortgage financing):</b>The portion of Sales Price not
+								payable in cash will be paid as follows: (Check applicable boxes below)
+							</div>
+							<div style="float: left; width: 93%; margin-top: 6px; padding-left: 19px;" class=" ">
+								<span stryle="font-size:18px;">A.  THIRD PARTY FINANCING:</span>  One  or  more  third  party  mo rtgage  loans  in  the  total  amount  of $  <span><input type="text"> </span>(excluding any loan funding fee or mortgage insurance premium).
+							</div>
+							<div style="float: left; width: 89%; margin-top: 6px; padding-left: 54px;" class=" ">
+								<span stryle="font-size:18px;">(1)  Property Approval::</span>
+								If  the  Property  does  not  sati sfy  the  lenders'  underwriting  requirements  for the  loan(s)  (including,  but  not  limited  to  appraisa l,  insurability  and  lender  required  repairs), Buyer  may  terminate  this  contract  by  giving  notice  to  Seller  prior  to  closing  and  the  earnest money will be refunded to Buyer
+
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 54px;" class=" ">
+								<span stryle="font-size:18px;">(2)  Credit Approval:</span>
+								(Check one box only)
+							</div>
+							<div style="float: left; width: 100%; margin-top: 6px; padding-left: 54px;" class=" ">
+								<span stryle="font-size:18px;">(3)  Credit Approval:</span>
+							</div>
+							<div style="float: left; width: 80%; margin-top: 6px; padding-left: 80px;" class=" ">
+								<span stryle="font-size:18px;">(A) </span> 			This  contract  is  subject  to  Buyer  being  approved   for  the  financing  described  in  the  attached Third Party Financing Addendum for Credit Approval
+							</div>
+							<div style="float: left; width: 80%; margin-top: 6px; padding-left: 80px;" class=" ">
+								<span stryle="font-size:18px;">(B) </span>
+								This contract is not subject to Buyer being approved for financing and does not involve FHA or VA financing.
+							</div>
+							<div style="float: left; width: 95%; margin-top: 6px; padding-left: 54px;" class=" ">
+								<span stryle="font-size:18px;">(4)  ASSUMPTION:</span>
+								The assumption of the unpaid principal balance of one or more promissory notes described in the attached TREC Loan Assumption Addendum.
+							</div>
+							<div style="float: left; width: 93%; margin-top: 6px; padding-left: 54px;" class=" ">
+								<span stryle="font-size:18px;">(4)  SELLER FINANCING:</span>
+								A promissory note from Buyer to Seller of $  <span ><input type="text"></span>, secured by  vendor's and deed of trust liens, and containing the terms and conditions described in the attached  TREC Seller Financing Addendum. If an owner policy of title insurance is furnished, Buyer shall  furnish Seller with a mortgagee policy of title insurance.
+
+							</div>
+
+						</div>
+
+
+					</div>
+					<div class=" " style="border:0px solid GREEN;width:100%;height:auto;margin:0 auto;padding: 0px;">
+						<div class="footer" >
+							<div style="width: 10%; float: left;"  class=" ">
+								<h3 style="padding: 0px; margin: 0px;">TAR 1601</h3>
+							</div>
+							<div class=" " style="text-align: center; line-height: 29px; width: 80%; position: relative; float: left;">
+								Initialed for identification by Buye <span ><input type="text"></span> and Seller <span ><input type="text"></span>
+							</div>
+							<div style="width: 10%; float: left;" class=" ">
+								04-28-2014
+							</div>
+						</div>
+						<div class="footer" >
+							<div style="width: 50%; float: left;"  class=" ">
+								<small>Nova Cloud Brokerage LLC, 210 Lee Barton Dr Austin, TX 78704</small>
+							</div>
+							<div class=" " style="text-align: center; line-height: 29px; width: 50%; position: relative; float: left;">
+								<small> Phone: (310)880-8146        Fax:</small>
+							</div>
+						</div>
+						<div class="footer" >
+							<div style="width: 12%; float: left;"  class=" ">
+								<small>David Silva</small>
+							</div>
+							<div class=" " style="text-align: center; line-height: 29px; width: 70%; position: relative; float: left;">
+								<small> Produced with zipForm® by zipLogix 18070 Fifteen Mile Road, Fraser, Michigan 48026 www.zipLogix.com</small>
+							</div>
+							<div style="width: 12%; float: left;" class=" ">
+								`<small>Fast Offer</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				</body>
+			</ion-scroll>
+		</ion-content>
+
+		<div class="bar bar-footer edit-nopadd">
+			<div class="button-bar">
+				<button class="button icon-left edit-bcolorg bold" ui-sref="savedcontract">SEND</button>
+				<button class="button edit-bcolorr activated bold"   ng-click="pdf_contract()" >SAVE</button>
+			</div>
+		</div>
+	</div>
+</ion-view>
+

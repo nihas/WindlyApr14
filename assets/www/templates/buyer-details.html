@@ -1,0 +1,85 @@
+<ion-view  cache-view="false" >
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="app.tabs.buyeractive"></button>
+	  <div class="h1 title bold">BUYERS</div>
+    </div>
+
+	<div ng-controller="BuyeractiveCtrl">
+	<div ng-init="initial_buyer_detail()">
+    <ion-content  overall scroll="true"   class="has-header" >
+		<ion-list  >
+				<div ng-bind-html="buyer_name" class="buyde-align buyde-clr buyde-top">
+				</div>
+				<ion-item ng-bind-html="buyer_name2" class="buyde-align buyde-clr buyed-mid">
+				</ion-item>
+				<ion-item  ng-bind-html="buyer_phone" class="buyde-align buyde-last">
+				</ion-item>
+				<ion-item  ng-bind-html="buyer_email"  class="buyde-align  buyed-mid">
+				</ion-item>
+				<ion-item ng-bind-html="addressline_1"  class="buyde-align buyde-last">
+				</ion-item>
+			</ion-list>
+
+
+
+		    <div class="buyde-butt">
+				<a class="button buyde-col by-wid" ng-click="sendSms(buyer_phone,'HELLO')">
+				  Send Message
+				</a>
+				<a class="button buyde-col by-wid1" href="tel:{{buyer_phone}}">
+                  Call
+				</a>
+            </div>
+            <div>
+                <p class="buyde-namegap">
+                   BUYER OFFERS
+                </p>
+            </div>
+            <ion-list class="login-form">
+                <button class="button-full bold buyde-stripr">
+					<img src="img/buyerde.png" class="off-icon">
+                    <span class="off-icon off-text">Waiting Buyer's Signature</span>
+                </button>
+				<div class="buyde-hgt" ui-sref="offersdetails">
+				    <img ng-src="{{image1}}" class="buyed-img">
+					<ion-item  ng-bind-html="home" class="buyde-imgtext">
+                    </ion-item>
+					<ion-item  ng-bind-html="price" class="buyde-imgtext2">
+                    </ion-item>
+					<ion-item  ng-bind-html="location" class="buyde-imgtext3 by-bold">
+                    </ion-item>
+					<ion-item  ng-bind-html="date" class="buyde-imgtext3">
+                    </ion-item>
+                </div>
+            </ion-list>
+            <ion-list class="buyde-form">
+                <button class="button-full bold buyde-stripo">
+					<img src="img/rightarrow.png" class="off-icon">
+                    <span class="off-icon off-text">Sent to Seller</span>
+                </button>
+               <div class="buyde-hgt" ui-sref="offersdetails">
+				    <img ng-src="{{image1}}" class="buyed-img">
+					<ion-item  ng-bind-html="home" class="buyde-imgtext">
+                    </ion-item>
+					<ion-item  ng-bind-html="price" class="buyde-imgtext2">
+                    </ion-item>
+					<ion-item  ng-bind-html="location" class="buyde-imgtext3 by-bold">
+                    </ion-item>
+					<ion-item  ng-bind-html="date" class="buyde-imgtext3">
+                    </ion-item>
+                </div>
+            </ion-list>
+
+	</ion-content>
+
+
+	<div class="bar bar-footer buyde-foo npad">
+		<div class="col col-25 ion-edit buyde_foo-clrpad buyde-edit" ui-sref="editbuyer"></div>
+		<div class="col col-25 ion-trash-a buyde_foo-clrpad buyde-delete" ng-click="delete_buyer({{buyer_id}})"></div>
+		<div class="col col-50 buyde_mark" ng-click="closed_buyer({{buyer_id}})">Mark as Close</div>
+	</div>
+
+	</div>
+	</div>
+
+</ion-view>

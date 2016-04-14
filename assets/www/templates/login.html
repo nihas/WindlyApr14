@@ -1,0 +1,52 @@
+ <ion-view cache-view="false">
+    <ion-content overflow-scroll="true" padding="true" class="login-back" scroll="false">
+        <div style="margin-top:77px;">
+          <div class="item-image border_item login_hd_img border_val ">
+              <img src="img/Splash-v4.png" style="width:66% !important;">
+          </div>		
+		</div>
+        <form class="login-form" name="myForm">
+            <ion-list>
+			<div  ng-app='angular_post_demo' ng-controller='login'>
+                <label class="item-input clr-text login-input">
+                    <input type="text" ng-model="email" placeholder="Email" name="email" ng-model="email" required>
+                </label>
+                <div class="lv-padd">
+						<span style="color:red;" ng-show="myForm.email.$touched && myForm.email.$invalid">
+						  <span ng-show="myForm.email.$error.required">* Email is required.</span>
+						  <span ng-show="myForm.email.$error.email">* Invalid email address.</span>
+						</span>
+                </div>
+                <label class="item-input clr-text login-input">
+                    <input type="password" ng-model="password" placeholder="Password" name="password" ng-model="password" ng-minlength="6" required>
+                </label>
+                <div class="lv-padd">
+						<span style="color:red;" ng-show="myForm.password.$touched && myForm.password.$invalid">
+						  <span ng-show="myForm.password.$error.required">* Password is required.</span>
+						  <span ng-show="myForm.password.$error.minlength">* Password must be longer than 6 characters.</span>
+						</span>
+                </div>
+
+            </ion-list>
+              <button class="button button-full bold button-calm" ng-disabled="myForm.password.$touched && myForm.password.$invalid ||
+myForm.email.$touched && myForm.email.$invalid"  ng-click="check_credentials()">
+                  SIGN IN
+              </button>
+			  <span id="message"></span>
+            <div>
+                <p class="calm login-line" ng-click="showPopup()">
+                   Forgot Password?
+                </p>
+            </div>
+            <div class="space"></div>
+            <button class="button button-assertive bold button-full"  ng-click="googleSignIn()">
+				SIGN IN WITH GOOGLE
+			</button>
+        
+        <div class="login-line clr">
+                Don't have an account? <p class="assertive login-line2" ui-sref="register">Sign Up</p>
+        </div>
+			</form>
+			</div>
+    </ion-content>
+</ion-view>

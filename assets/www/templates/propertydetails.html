@@ -1,0 +1,60 @@
+<ion-view ng-controller="GetstartedCtrl" cache-view="false">
+	<div class="bar bar-header head-col">
+	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="app.tabs.getstarted"></button>
+	  <div class="h1 title bold">SINGLE FAMILY HOME</div>
+    </div>
+    <ion-content scroll="true"  ng-init="initial_detail()">
+
+                <ion-slide-box>
+                    <ion-slide>
+                        <img ng-src="{{'http://45.55.245.79:81/projects/windly/images/'+property_img}}" class="pd-slide">
+                    </ion-slide>
+					<ion-slide>
+                        <img ng-src="{{'http://45.55.245.79:81/projects/windly/images/'+property_img}}" class="pd-slide">
+                    </ion-slide>
+					<ion-slide>
+                        <img ng-src="{{'http://45.55.245.79:81/projects/windly/images/'+property_img}}" class="pd-slide">
+                    </ion-slide>
+                </ion-slide-box>
+		 <form class="pd-mar">				
+            <ion-list>				
+                <div class="buyde-hgt">
+					<ion-item  ng-bind-html="name" class="pd-name">
+                    </ion-item>
+					<ion-item   class="pd-price">{{price}}
+                    </ion-item>
+					<ion-item  >{{property_location}}
+				    </ion-item>
+					  <div class="row">
+						  <img ng-src="img/bedrooms.png" class="col-33 pd-small">
+						  <img ng-src="img/bathrooms.png" class="col-33 pd-small">
+						  <img ng-src="img/sqft-img.png" class="col-33 pd-small">
+					  </div>
+					  <div class="row">
+						  <div class="col33 pd-imgtext">{{bedrooms}}</div>
+						  <div class="col33 pd-imgtext">{{bathrooms}}</div>
+						  <div class="col33 pd-imgtext">{{sqft}}</div>
+					  </div>
+					<ion-item   class="pd-head">{{property_type}}
+                    </ion-item>
+					<div class="pd-details">
+					<ion:articles  >{{property_detail}}
+					</ion:articles>
+					</div>
+					<ion-item  ng-bind-html="list" class="pd-list">
+                    </ion-item>
+					<ion-item  class="pd-list1">{{Agent_name}}
+                    </ion-item>
+					<ion-item   class="pd-mail">{{Agent_email}}
+                    </ion-item>
+					<ion-item  ng-bind-html="number" class="pd-number1">
+                    </ion-item><br><br>
+				  </div>
+            </ion-list>					  
+		 </form>
+		
+    </ion-content>
+				<ion-footer-bar class="bar bar-footer pd-foo" ui-sref="submit-offer">
+				  <div class="title reg-tittle bold">SUBMT OFFER</div>
+				</ion-footer-bar>
+</ion-view>

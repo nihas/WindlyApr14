@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-content overflow-scroll="true" padding="true" class="login-back" scroll="false">
+        <div style="margin-top:77px;">
+          <div class="item-image border_item login_hd_img border_val ">
+              <img src="./img/avatar83.png" style="width:66% !important;">
+          </div>		
+		</div>
+        <body ng-app="starter">
+        <ion-content class="has-header padding" ng-controller="ImageController">
+            <button class="button button-full button-energized" ng-click="addMedia()">
+                Add image
+            </button>
+            <br><br>
+            <ion-scroll direction="x" style="height:200px; min-height: 200px; overflow: scroll; white-space: nowrap;">
+                <img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+            </ion-scroll>
+            </ion-content>
+        </body>
+			</div>
+    </ion-content>
+
+</ion-view>
