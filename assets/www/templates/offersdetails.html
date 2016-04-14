@@ -1,20 +1,14 @@
 <ion-view>
-	<div class="bar bar-header head-col">
+	<div class="bar bar-header head-col" div ng-controller="BuyeractiveCtrl">
 	  <button class="button button-icon bold ion-ios-arrow-thin-left" ui-sref="app.tabs.offers"></button>
-	  <div class="h1 title bold">SINGLE FAMILY HOME</div>
+	  <div ng-init="offer_details()"  class="h1 title bold" ng-bind-html="p_type"></div>
     </div>
-    <ion-content scroll="true">
-                <ion-slide-box>
-                    <ion-slide>
+	<div ng-controller="BuyeractiveCtrl">
+    <ion-content scroll="true" ng-init="offer_details()" class="has-footer">
+		<div ng-hide=fullview>
+
                         <img ng-src="{{image1}}" class="pd-slide">
-                    </ion-slide>
-					<ion-slide>
-                        <img ng-src="{{image1}}" class="pd-slide">
-                    </ion-slide>
-					<ion-slide>
-                        <img ng-src="{{image1}}" class="pd-slide">
-                    </ion-slide>
-                </ion-slide-box>
+
                 <button class="button-full bold off-button-col od-top">
 					<img src="img/eye.png" class="off-icon">
                     <span class="off-icon off-text">Viewed by Sellers</span>
@@ -69,9 +63,11 @@
 				  </div>
             </ion-list>					  
 		 </form>
-		
+		</div>
     </ion-content>
 				<ion-footer-bar class="bar bar-footer pd-foo" ui-sref="offersdetails">
 				  <div class="title reg-tittle bold">WITHDRAW OFFER</div>
 				</ion-footer-bar>
+
+	</div>
 </ion-view>

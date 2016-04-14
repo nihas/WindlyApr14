@@ -464,11 +464,18 @@ $scope.property_view = function (pid) {
  };
 })
 .controller('OffersCtrl', function($scope) {
+
+
+$scope.offers = function (pid) {
+
+
   $scope.image1 = 'img/homeimglist.png';
   $scope.homepre = "Buyer:\n&nbspKELLY SMITH"
   $scope.price = "$ 750,000"
   $scope.location = "701 Brazos St.Austin"
   $scope.date = "Oct 20, 2015"
+  }
+
 })
 .filter('n30p', function () {
     return function(text){
@@ -480,6 +487,181 @@ $scope.property_view = function (pid) {
 
 //////////////////////////////////// BUYER CONTROLLER ///////////////////////////////////////////////////////////
 .controller('BuyeractiveCtrl', function($scope, $state, $http, $ionicLoading, $ionicPopup, $localstorage,$cordovaSms) {
+
+//----------------------------------------------------------------- OFFERS FUNCTION ---------------------------------------------------------
+$scope.offer="";
+
+$scope.clicked_offer = function (id) {
+
+offer=id;
+$state.go('offersdetails');
+
+}
+
+$scope.offer_details = function () {
+
+
+            $scope.fullview=true;
+//alert(offer);
+
+ $ionicLoading.show({
+                template: '<ion-spinner class="light"></ion-spinner>'
+               });
+
+
+   $scope.send_buyer=false;
+   $scope.send_seller=false;
+   $scope.buyer_signed=false;
+   $scope.buyer_signed=false;
+
+ var request_offer_details = $http({
+              method: "post",
+              url: "http://45.55.245.79:81/projects/windly/api/Sample/offer_details",
+              data: {agent_id:$localstorage.get("agent_id",""),offer_id:offer},
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          });
+
+           request_offer_details.success(function (data) {
+//            details = data.property_detail;
+            $ionicLoading.hide();
+            $scope.fullview=false;
+//            alert(data.response.property_location);
+
+ $scope.name = "FOR SALE";
+  $scope.add1 = data.response.property_location;
+  $scope.mail = data.response.seller_email;
+  $scope.image1 = 'http://45.55.245.79:81/projects/windly/images/'+data.response.property_img;
+  $scope.buyer = "Buyer";
+  $scope.buyerval = data.response.buyer_name;
+  $scope.offers = "Offers";
+  $scope.offersval = "$ "+data.response.offer_price
+  $scope.fee = "Option Fee";
+  $scope.feeval = "$ "+data.response.option_fee;
+  $scope.period = "Option Period";
+  $scope.periodval = data.response.option_period+" days";
+  $scope.date = data.response.closing_date;
+  $scope.p_type=data.response.property_type;
+  $scope.dateval = data.response.closing_date;
+  $scope.list = "LISTING AGENT INFORMATION";
+  $scope.list1 = data.response.seller_name;
+  $scope.number = data.response.seller_phone;
+  $scope.price = "$ "+data.response.property_price;
+  $scope.image2 = 'img/bedrooms.png';
+  $scope.image3 = 'img/bathrooms.png';
+  $scope.image4 = 'img/sqft-img.png';
+
+
+
+//            $state.go('propertydetailhome', {}, {reload: true});
+            });
+
+           request_offer_details.error(function(data, status){
+
+     		   $ionicLoading.hide();
+     		//alert(data.agent_id);
+            });
+
+}
+
+
+
+
+ $scope.request_offers = function () {
+
+ $scope.fullview=true;
+
+
+ $ionicLoading.show({
+                template: '<ion-spinner class="light"></ion-spinner>'
+               });
+
+
+   $scope.send_buyer=false;
+   $scope.send_seller=false;
+   $scope.buyer_signed=false;
+   $scope.buyer_signed=false;
+
+ var request_offers = $http({
+              method: "post",
+              url: "http://45.55.245.79:81/projects/windly/api/Sample/offers",
+              data: {agent_id:$localstorage.get("agent_id","")},
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          });
+
+           request_offers.success(function (data) {
+//            details = data.property_detail;
+            $ionicLoading.hide();
+            $scope.fullview=false;
+
+            if(data.send_buyer==false){
+
+                $scope.send_buyer=true;
+            }else{
+                $scope.send_buyer=false;
+
+                $scope.image1 = 'http://45.55.245.79:81/projects/windly/images/'+data.send_buyer.img;
+                               $scope.offer=data.send_buyer.offer_id;
+                               $scope.homepre = "Buyer:\n&nbsp"+data.send_buyer.buyer_name;
+                               $scope.price = "$ "+data.send_buyer.price;
+                               $scope.location = data.send_buyer.location;
+                               $scope.date = data.send_buyer.add_date;
+            }
+
+            if(data.send_seller==false){
+                            $scope.send_seller=true;
+                        }else{
+                            $scope.send_seller=false;
+
+                            $scope.image1 = 'http://45.55.245.79:81/projects/windly/images/'+data.send_seller.img;
+                            $scope.offer=data.send_seller.offer_id;
+                                           $scope.homepre = "Buyer:\n&nbsp"+data.send_seller.buyer_name;
+                                           $scope.price = "$ "+data.send_seller.price;
+                                           $scope.location = data.send_seller.location;
+                                           $scope.date = data.send_seller.add_date;
+
+                        }
+
+             if(data.buyer_signed==false){
+                             $scope.buyer_signed=true;
+                         }else{
+                             $scope.buyer_signed=false;
+
+                             $scope.image1 = 'http://45.55.245.79:81/projects/windly/images/'+data.buyer_signed.img;
+                             $scope.offer=data.buyer_signed.offer_id;
+                                            $scope.homepre = "Buyer:\n&nbsp"+data.buyer_signed.buyer_name;
+                                            $scope.price = "$ "+data.buyer_signed.price;
+                                            $scope.location = data.buyer_signed.location;
+                                            $scope.date = data.buyer_signed.add_date;
+
+                         }
+
+             if(data.view_seller==false){
+                                          $scope.view_seller=true;
+                                      }else{
+                                          $scope.view_seller=false;
+
+                                          $scope.image1 = 'http://45.55.245.79:81/projects/windly/images/'+data.view_seller.img;
+                                          $scope.offer=data.view_seller.offer_id;
+                                                         $scope.homepre = "Buyer:\n&nbsp"+data.view_seller.buyer_name;
+                                                         $scope.price = "$ "+data.view_seller.price;
+                                                         $scope.location = data.view_seller.location;
+                                                         $scope.date = data.view_seller.add_date;
+
+                                      }
+
+//            $state.go('propertydetailhome', {}, {reload: true});
+            });
+
+           request_offers.error(function(data, status){
+
+     		   $ionicLoading.hide();
+     		//alert(data.agent_id);
+            });
+
+            }
+
+
+//---------------------------------------------------------------- END OF OFFERS FUNCTIONS ----------------------------------------------------
 
  $scope.sms={};
 
